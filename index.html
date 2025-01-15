@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medak - Personalized Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 20px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>DK Website</h1>
+    <p>अपना नाम दर्ज करें:</p>
+    <input type="text" id="username" placeholder="अपना नाम लिखें">
+    <button onclick="generateMessage()">Enter</button>
+    <div id="message"></div>
+
+    <script>
+        function generateMessage() {
+            const username = document.getElementById("username").value.trim();
+            if (username) {
+                const message = `
+                    आशा है, आप ${username} हैं।<br><br>
+                    आपके बारे में Daksh ने कुछ बातें कही हैं:<br>
+                    <ul>
+                        <li>आप एक अच्छे इंसान हैं और हमेशा ऐसे ही रहेंगे।</li>
+                        <li>आप दूसरों का भला सोचते हैं।</li>
+                        <li>लेकिन Daksh कहता है कि आपको अपना भी ध्यान रखना चाहिए क्योंकि दुनिया बहुत कमीनी है।</li>
+                        <li>आपके लिए Daksh की यही प्रार्थना है कि परमात्मा आपकी लंबी उम्र और सुखद जीवन प्रदान करें।</li>
+                    </ul>
+                     😊
+                `;
+                document.getElementById("message").innerHTML = message;
+            } else {
+                document.getElementById("message").innerText = "कृपया अपना नाम दर्ज करें!";
+            }
+        }
+    </script>
+</body>
+</html>
